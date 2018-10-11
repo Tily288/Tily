@@ -2,26 +2,26 @@
 #include<stdlib.h>
 #include<time.h>
 
-char getSignal();                      //»ñÈ¡Ëæ»úÔËËã·ûµÄº¯Êı
-int random(double,double);             //»ñÈ¡Ëæ»úÊıº¯Êı
-int getResult(int,int,char);           //½á¹û¼ÆËãº¯Êı
-int takeTest();                        //ÌâÄ¿Éú³Éº¯Êı
+char getSignal();                      //è·å–éšæœºè¿ç®—ç¬¦çš„å‡½æ•°
+int random(double,double);             //è·å–éšæœºæ•°å‡½æ•°
+int getResult(int,int,char);           //ç»“æœè®¡ç®—å‡½æ•°
+int takeTest();                        //é¢˜ç›®ç”Ÿæˆå‡½æ•°
 
 void main() 
 {
          int i,n,a,right=0;
          double percent;
-         printf("ÇëÊäÈëÌâÄ¿µÄÊıÁ¿:");
+         printf("è¯·è¾“å…¥é¢˜ç›®çš„æ•°é‡:");
          scanf("%d",&n);
          for(i=0;i<n;i++)
          {
 			 a=takeTest();
              right=right+a;
          }
-         printf("»Ø´ğÕıÈ·!\n");
-         printf("ÕıÈ·´ğ°¸Îª:%d\n",right);
+         printf("å›ç­”æ­£ç¡®!\n");
+         printf("æ­£ç¡®ç­”æ¡ˆä¸º:%d\n",right);
          percent=((double)right*100.00)/(double)n;
-         printf("ÕıÈ·ÂÊÎª:%0.2f %%\n",percent);
+         printf("æ­£ç¡®ç‡ä¸º:%0.2f %%\n",percent);
 }
 
 char getSignal()
@@ -53,7 +53,7 @@ int getResult(int num1,int num2,char signal)
     case '/':
         res=num1/num2;break;
     default:
-        printf("ÔËËã·û´íÎó£¡\n");
+        printf("è¿ç®—ç¬¦é”™è¯¯ï¼\n");
     }
     return res;
 }
@@ -90,16 +90,16 @@ if(signal=='-')
     }
     printf("%d%c%d=",num1,signal,num2);
     scanf("%d",&get);
-    fflush(stdin);   //Çå¿ÕÊäÈë»º³åÇø
+    fflush(stdin);   //æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
     if(getResult(num1,num2,signal)==get)
         {
-        printf("»Ø´ğÕıÈ·!\n");
+        printf("å›ç­”æ­£ç¡®!\n");
         a=1;
         }
     else
     {
-        printf("»Ø´ğ´íÎó!\n");
-        printf("ÕıÈ·´ğ°¸Îª: %d\n",getResult(num1,num2,signal));
+        printf("å›ç­”é”™è¯¯!\n");
+        printf("æ­£ç¡®ç­”æ¡ˆä¸º: %d\n",getResult(num1,num2,signal));
         a=0;
     }
     return a;
